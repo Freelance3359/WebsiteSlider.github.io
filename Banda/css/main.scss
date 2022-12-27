@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+// Navbar
+.navbar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    height: .3rem;
+
+    .menu {
+        max-width: 72rem;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+
+        .logo {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 4rem;
+
+            span {
+                font-weight: 300;
+            }
+        }
+
+        .burger {
+            height: 4rem;
+            width: 3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .bar {
+                width: 2.8rem;
+                height: 2px;
+                border-radius: 5px;
+                background-color: #eee;
+                transition: .3s;
+                position: relative;
+
+                &:after,
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: initial;
+                    height: inherit;
+                    background: #eee;
+                    transition: .5s;
+                }
+
+                &:after {
+                    transform: translateY(9px);
+                }
+
+                &:before {
+                    transform: translateY(-9px);
+                }
+            }
+        }
+    }
+}
+
+
+// page
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(135deg, #485461 0%, #28313b 74%);
+    overflow: hidden;
+    transform-style: preserve-3d;
+
+    .screen_1 {
+        background-color: #5b6a7b;
+    }
+
+    .screen_2 {
+        background-color: #495059;
+    }
+
+    .screen_3 {
+        background-color: #697c91;
+    }
+
+    .screen_4 {
+        background-color: #34373b;
+    }
+
+    // links
+    .links {
+        position: absolute;
+        width: 30%;
+        right: 0;
+        top: 0px;
+        height: 100vh;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #eee;
+            padding: .07rem 0;
+            font-size: 1rem;
+            display: inline-block;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: hide .5s forwards ease;
+            margin-bottom: 34px;
+            font-size: 20px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .link:hover {
+            color: rgb(187, 182, 182);
+        }
+
+        .lorem {
+            color: white;
+            height: 300px;
+            width: 400px;
+            font-size: 27px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 100px;
+        }
+    }
+
+    // меню
+    .main {
+        position: relative;
+        width: 100%;
+        left: 0;
+        z-index: 5;
+        overflow: hidden;
+        transform-origin: left;
+        transform-style: preserve-3d;
+        transition: .5s;
+
+        header {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+
+            &.header__one {
+                background: url(../img/br1.jpg) no-repeat top center/cover;
+            }
+
+            &.header__two {
+                background: url(../img/br2.jpg) no-repeat top center/cover;
+            }
+
+            &.header__free {
+                background: url(../img/br3.jpg) no-repeat top center/cover;
+            }
+
+            &.header__four {
+                background: url(../img/br4.jpeg) no-repeat top center/cover;
+            }
+
+            &.header__five {
+                background: url(../img/br6.jpeg) no-repeat top center/cover;
+            }
+
+            // поменять позицию релетив на абсолют
+            .header {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(43, 51, 59, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &__item {
+                    max-width: 35rem;
+                    text-align: center;
+                    color: white;
+                    padding: 0 2rem;
+
+                    .title {
+                        font-size: 2.7rem;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn_button {
+        display: flex;
+        justify-content: end;
+        margin-top: 700px;
+        margin-right: 0px;
+    }
+
+    .btn {
+        font-size: 2em;
+        border: none;
+        padding: 0.85em 0.75em;
+        margin: 1rem;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        background-color: #28313bbc;
+        border-top-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+        border: 3px solid #0e1010bc;
+        width: 280px;
+        height: 80px;
+        color: #fff;
+        padding: 5px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-block;
+        box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+            7px 7px 20px 0px rgba(0, 0, 0, .1),
+            4px 4px 5px 0px rgba(0, 0, 0, .1);
+        outline: none;
+        ;
+
+        .btn-9 {
+            border: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        &:after {
+            position: absolute;
+            content: " ";
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1fd1f9;
+            background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+            transition: all 2s ease;
+        }
+
+        &:hover {
+            background: transparent;
+            box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+                inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+            color: #fff;
+        }
+
+        &:hover:after {
+            -webkit-transform: scale(1) rotate(180deg);
+            transform: scale(1) rotate(180deg);
+            box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, .5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .2),
+                inset -4px -4px 6px 0 rgba(255, 255, 255, .5),
+                inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        }
+    }
+}
+
+// Shadows
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: .5s;
+    background: rgba(144, 27, 168, 0.397);
+
+    &.one {
+        z-index: -1;
+        opacity: .15;
+    }
+}
+
+// Анимации
+.container.active {
+    .bar {
+        transform: rotate(360deg);
+        background-color: transparent;
+
+        &:before {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        &:before {
+            transform: translateY(0) rotate(-45deg);
+        }
+    }
+
+    .main {
+        animation: main-animation 1s ease;
+        cursor: pointer;
+        transform: perspective(1300px) rotate(-2deg) translateZ(310px) scale(0.5);
+        margin-left: 100px;
+
+        // При наведении на картинку 
+        &:hover {
+            transform: perspective(1300px) rotate(-2deg) translateZ(340px) scale(0.5);
+
+            // Увелечение картинки при  наведении
+            +.shadow.one {
+                transform: perspective(1300px) rotate(-2deg) translateZ(340px) scale(0.5);
+            }
+        }
+    }
+
+    .shadow.one {
+        animation: shadow-one .6s ease-out;
+        transform: perspective(1300px) rotateY(-2deg) translateZ(215px) scale(30.5);
+    }
+
+
+    .links a {
+        animation: appear 4.5s forwards ease var(--i);
+    }
+}
+
+// Key Frames
+@keyframes main-animation {
+
+    // Не трогать
+    from {
+        transform: translate(0);
+    }
+
+    // Куда и как полетит картинка вверх, вниз.
+    to {
+        transform: perspective(1300px) rotate(-2deg) translateZ(310px) scale(0.5);
+    }
+}
+
+@keyframes shadow-one {
+    0% {
+        transform: translate(0);
+    }
+
+    5% {
+        transform: perspective(1300px) rotate(-2deg) translateZ(310px) scale(0.5);
+    }
+
+    100% {
+        transform: perspective(1300px) rotate(-2deg) translateZ(215px) scale(0.5);
+    }
+}
+
+@keyframes hide {
+    form {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
